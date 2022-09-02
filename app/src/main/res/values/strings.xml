@@ -2,4 +2,5 @@
     <string name="app_name">Lista de Compras</string>
     <string name="no_products_registered">Nenhum produto cadastrado</string>
     <string name="cd_add_new_product">Botão de adicionar novo produto</string>
+    <string name="hint_product">Produto</string>
 </resources>

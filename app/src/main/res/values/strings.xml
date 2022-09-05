@@ -9,4 +9,6 @@
     <string name="label_added_to_cart">Item adquirido</string>
     <string name="cd_close">Fechar tela</string>
     <string name="add_new_item">Adicionar novo item</string>
+    <string name="errorNoProduct">Informe o nome do item</string>
+    <string name="errorNoQuantity">Informe a quantidade</string>
 </resources>

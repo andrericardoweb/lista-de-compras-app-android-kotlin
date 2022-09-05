@@ -3,4 +3,10 @@
     <string name="no_products_registered">Nenhum produto cadastrado</string>
     <string name="cd_add_new_product">Botão de adicionar novo produto</string>
     <string name="hint_product">Produto</string>
+    <string name="label_cancel">Cancelar</string>
+    <string name="label_save">Salvar</string>
+    <string name="hint_quantity">Quantidade</string>
+    <string name="label_added_to_cart">Item adquirido</string>
+    <string name="cd_close">Fechar tela</string>
+    <string name="add_new_item">Adicionar novo item</string>
 </resources>

@@ -1,11 +1,13 @@
 package dev.andrericardo.listadecompras.ui.addproduct
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import dev.andrericardo.listadecompras.R
+import dev.andrericardo.listadecompras.data.ItemList
 import dev.andrericardo.listadecompras.databinding.ActivityAddProductBinding
+import dev.andrericardo.listadecompras.ui.main.MainActivity
 
 class AddProductActivity : AppCompatActivity() {
 
@@ -37,9 +39,6 @@ class AddProductActivity : AppCompatActivity() {
             val product = tietProduct.text.toString()
             val quantity = tietQuantity.text.toString()
             val isAdd = cbAddedToCart.isChecked
-            Log.i("AddNewItem", "product: ${product}")
-            Log.i("AddNewItem", "quantity: ${quantity}")
-            Log.i("AddNewItem", "IsAdd: ${isAdd}")
 
             tilProduct.error = if (product.isEmpty()) {
                 getString(R.string.errorNoProduct)
@@ -54,11 +53,14 @@ class AddProductActivity : AppCompatActivity() {
             }
 
             if (product.isNotEmpty() && quantity.isNotEmpty()) {
-                Toast.makeText(
-                    applicationContext,
-                    "Produto: ${product}, Quant: ${quantity}, Adquirido: ${isAdd}",
-                    Toast.LENGTH_LONG
-                ).show()
+                Intent().apply {
+                    putExtra(MainActivity.RETURN_ITEM_LIST, ItemList(
+                        product = product,
+                        quantity = quantity,
+                        isAdd = isAdd
+                    ))
+                    setResult(RESULT_OK, this)
+                }
                 finish()
             }
         }
